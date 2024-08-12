@@ -69,6 +69,10 @@ const Sidebar = () => {
             <img src={Dashboard} alt="dashboard" />
             <a href="/galerija">Galerija</a>
             </li>
+            <li className="addPost">
+                <img src={Dashboard} alt="dashboard" />
+                <a href="/addpost">Nova Objava</a>
+            </li>
             <li className="logout">
                 <img src={Dashboard} alt="dashboard" />
                 <a onClick={logOut}>Logout</a>
