@@ -9,7 +9,7 @@ import SearchBar from "./components/SearchBar";
 import {MenuProvider} from "./Contexts/MenuContext"
 import Protected from "./Protected Routes/Protected";
 import AddPost from "./pages/AddPost";
-// Majmuneeeeeeeeeeeeeeeeeee
+
 function App() {
  return(
   <MenuProvider>
