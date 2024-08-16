@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
@@ -14,7 +15,7 @@ class UserController extends Controller
         $user->username=$req->input('username');
         $user->email=$req->input('email');
         $user->password=Hash::make($req->input('password'));
-        $user->nickname=$req->input('nickname');
+        //$user->nickname=$req->input('nickname');
         $user->save();
         return $user;
     }
@@ -27,4 +28,11 @@ class UserController extends Controller
 
         return $user;
     }
+
+    function index(){
+        $users = User::all();
+        return $users;
+    }
+
+
 }

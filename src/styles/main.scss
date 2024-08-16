@@ -637,3 +637,19 @@ h3{
     margin-top: 10%;
     margin-left: 35%;
 }
+
+.suggestions{
+    cursor: pointer;
+    background: $lightGreen;
+    border-radius: 25px;
+    padding: 5px;
+}
+
+.suggestionBox{
+    background: $green;
+    border-radius: 15px;
+}
+
+.suggestions:hover{
+    background: $darkGrey;
+}
