@@ -6,7 +6,7 @@ import axios from 'axios'
 const FriendList = () => {
 
   const [users,setUsers] = useState([]);
-
+/*
   useEffect(()=>{
     (async () => {
         let i;
@@ -20,6 +20,14 @@ const FriendList = () => {
         }
         setUsers(dummyArr);
     })();
+},[]);
+*/
+
+useEffect(()=>{
+  (async () => {
+      const response = await axios.get('http://localhost:8000/api/users');
+      setUsers(response.data);
+  })();
 },[]);
 
   return (
@@ -35,7 +43,7 @@ const FriendList = () => {
               return(
                 <li key={index}>
                   <img src={user.slika} alt="" />
-                  <a href="">{user.name}</a>
+                  <a href="">{user.username}</a>
                 </li>
               )
             })
