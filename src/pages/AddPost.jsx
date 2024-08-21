@@ -14,12 +14,16 @@ const AddPost = () => {
     const formData = new FormData();
     formData.append('text', text);
     formData.append('photo', photo);
-    formData.append('user_id', user_id); 
-    // Dodaj user_id u bazu
+    formData.append('user_id',user_id);
+   
 
     try {
-      let result = await fetch('http://127.0.0.1:8000/api/addpost', {
+      let result = await fetch('http://localhost:8000/api/addpost', {
         method: 'POST',
+        headers:{
+          "Content-Type":"application/json",
+          "Accept":"application/json"
+        },
         body: formData
       });
       if (result.ok) {

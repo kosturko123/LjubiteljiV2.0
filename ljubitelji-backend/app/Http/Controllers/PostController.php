@@ -11,7 +11,7 @@ class PostController extends Controller
     //
 
     function addPost(Request $req){
-
+    /*
         $currentuserid = Auth::user()->id;
 
         $post = new Post;
@@ -22,5 +22,14 @@ class PostController extends Controller
         $post->save();
        
         return $post;
+        */
+        $post = new Post;
+        $post->text = $req->input('text');
+        $post->photo_path = $req->file('photo_path')->store('posts');
+        $post->user_id = 2;
+        $post->save();
+        return $post;
+
+    
     }
 }
